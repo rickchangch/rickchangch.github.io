@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document </title>
+    <style>
+        body.bg {
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            background-image: url("./bg.jpeg");
+            /* background-size: cover; */
+            background-size: 100% auto;
+            background-position:center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item_1 {
+            position: absolute;
+            left: 30vw;
+            top: 48vh;
+
+            width: 25vw;
+            height: 25vw;
+            border: 3px solid #fff;
+            border-radius: 0% 100% 0% 0%;
+            overflow: hidden;
+            text-align: center;
+            vertical-align: center;
+            cursor: pointer;
+        }
+
+        .dialog {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .dialog > .dialog-content {
+            background: #fff;
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg">
+    <div class="item_1" onclick="showDialog()"></div>
+    <div id="dialog" class="dialog">
+        <div class="dialog-content">
+            <h2>Cat Image Dialog</h2>
+            <p>This is a simple dialog.</p>
+            <button onclick="hideDialog()">Close</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function showDialog() {
+        console.log("show")
+        var dialog = document.getElementById("dialog");
+        dialog.style.display = "block";
+    }
+
+    function hideDialog() {
+        console.log("hide")
+        var dialog = document.getElementById("dialog");
+        dialog.style.display = "none";
+    }
+</script>
